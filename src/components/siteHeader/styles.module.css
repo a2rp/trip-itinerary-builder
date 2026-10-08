@@ -1,0 +1,65 @@
+.siteHeader {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 20;
+    display: flex;
+    height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 max(24px, calc((100vw - 1320px) / 2));
+    color: #fff;
+    background: #172b42;
+    box-shadow: 0 4px 16px #172b421f;
+
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 760;
+        letter-spacing: -.04em;
+        white-space: nowrap;
+
+        .brandIcon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; color: #172b42; background: #f0ad5b; font-size: 14px; }
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: #bdcad4;
+        font-size: 12px;
+        font-weight: 650;
+
+        a:hover { color: #fff; }
+    }
+
+    .repositoryLink {
+        display: inline-flex;
+        min-height: 38px;
+        align-items: center;
+        gap: 8px;
+        padding: 0 12px;
+        border: 1px solid #607387;
+        border-radius: 9px;
+        color: #f7f8f9;
+        font-size: 11px;
+        font-weight: 700;
+        white-space: nowrap;
+        transition: border-color .18s, background .18s;
+
+        &:hover { border-color: #f0ad5b; background: #ffffff0d; }
+    }
+
+    @media (max-width: 640px) {
+        height: 62px;
+        gap: 12px;
+        padding: 0 16px;
+
+        .brand { font-size: 16px; .brandIcon { width: 31px; height: 31px; } }
+        .navigation { display: none; }
+        .repositoryLink { min-height: 35px; gap: 6px; padding: 0 9px; font-size: 10px; }
+    }
+}
