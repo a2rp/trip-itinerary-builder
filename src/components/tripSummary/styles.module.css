@@ -1,0 +1,67 @@
+.tripSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .tripCard,
+    .dayShape,
+    .travelNote { padding: 17px; border: 1px solid #dce2e7; border-radius: 14px; background: #fff; }
+
+    .tripCard {
+        overflow: hidden;
+        border: 0;
+        color: #f7f8fa;
+        background: #172b42;
+        box-shadow: 0 8px 20px #172b4215;
+
+        .cardLabel { color: #e8a15a; font-size: 8px; font-weight: 800; letter-spacing: .15em; }
+        h2 { margin-top: 10px; color: #fff; font-size: 23px; font-weight: 750; letter-spacing: -.04em; }
+        .tripTitle { margin-top: 2px; color: #b9c5ce; font-family: Georgia, "Times New Roman", serif; font-size: 13px; font-style: italic; }
+        .tripDate,
+        .tripTravelers { display: flex; align-items: center; gap: 8px; margin-top: 15px; color: #d6dee4; font-size: 10px; }
+        .tripTravelers { margin-top: 8px; color: #aebcc6; }
+        .tripDate svg,
+        .tripTravelers svg { color: #f0ad5b; font-size: 10px; }
+        .summaryDivider { height: 1px; margin: 15px 0 13px; background: #ffffff21; }
+        .tripStats { display: flex; align-items: center; gap: 19px; }
+        .tripStats div { display: flex; align-items: baseline; gap: 5px; }
+        .tripStats strong { color: #fff; font-size: 19px; font-weight: 750; }
+        .tripStats span { color: #adbac5; font-size: 9px; }
+        .tripStats i { width: 3px; height: 3px; border-radius: 50%; background: #e67555; }
+    }
+
+    .dayShape {
+        .sectionHead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+        .cardLabel { color: #c25c40; font-size: 8px; font-weight: 800; letter-spacing: .15em; }
+        .sectionHead > span { color: #87919a; font-size: 8px; }
+
+        ol { display: flex; flex-direction: column; gap: 0; margin-top: 15px; }
+        li { position: relative; display: flex; align-items: center; gap: 9px; min-height: 44px; }
+        li:not(:last-child)::after { position: absolute; top: 34px; bottom: -2px; left: 13px; width: 1px; background: #dfe5e8; content: ""; }
+        .shapeNumber { position: relative; z-index: 1; display: grid; width: 27px; height: 27px; flex: 0 0 27px; place-items: center; border: 1px solid #dce3e8; border-radius: 50%; color: #627a8d; background: #f8fafb; font-size: 8px; font-weight: 750; }
+        li:first-child .shapeNumber { border-color: #e67555; color: #fff; background: #e67555; }
+        .shapeText { display: flex; min-width: 0; flex-direction: column; gap: 1px; }
+        .shapeText strong { color: #60758a; font-size: 8px; font-weight: 750; }
+        .shapeText > span { overflow: hidden; color: #3d4c5a; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+        .shapeArrow { margin-left: auto; color: #aab5bd; font-size: 8px; }
+        .noStops { margin-top: 14px; color: #788590; font-size: 10px; }
+    }
+
+    .travelNote {
+        position: relative;
+        min-height: 117px;
+        overflow: hidden;
+        background: #faf3ec;
+
+        .noteMark { position: absolute; top: 1px; right: 13px; color: #e9c3a4; font-family: Georgia, "Times New Roman", serif; font-size: 54px; line-height: 1; }
+        p { position: relative; max-width: 195px; color: #785a48; font-family: Georgia, "Times New Roman", serif; font-size: 13px; font-style: italic; line-height: 1.45; }
+        > span:last-child { display: block; margin-top: 12px; color: #b27856; font-size: 7px; font-weight: 800; letter-spacing: .14em; }
+    }
+
+    .exportButton { min-height: 38px; border: 1px solid #d2dbe1; border-radius: 9px; color: #526779; background: #fff; font-size: 10px; font-weight: 700; }
+    .exportButton:hover { border-color: #91a8b9; background: #f8fafb; }
+    .exportButton:focus-visible { outline: 3px solid #abc4d5; outline-offset: 2px; }
+
+    @media (max-width: 1000px) { display: grid; grid-template-columns: 1fr 1fr; align-items: start; .travelNote, .exportButton { grid-column: 1 / -1; } }
+    @media (max-width: 600px) { grid-template-columns: minmax(0, 1fr); .travelNote, .exportButton { grid-column: auto; } }
+}

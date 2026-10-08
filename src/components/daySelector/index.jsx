@@ -3,8 +3,8 @@ import styles from "./styles.module.css";
 const DaySelector = ({ days, selectedDayId, onSelect }) => {
     const selectDayByKeyboard = (event, index) => {
         let nextIndex;
-        if (event.key === "ArrowDown") nextIndex = Math.min(index + 1, days.length - 1);
-        else if (event.key === "ArrowUp") nextIndex = Math.max(index - 1, 0);
+        if (event.key === "ArrowDown" || event.key === "ArrowRight") nextIndex = Math.min(index + 1, days.length - 1);
+        else if (event.key === "ArrowUp" || event.key === "ArrowLeft") nextIndex = Math.max(index - 1, 0);
         else if (event.key === "Home") nextIndex = 0;
         else if (event.key === "End") nextIndex = days.length - 1;
         else return;

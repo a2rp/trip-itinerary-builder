@@ -1,0 +1,69 @@
+.overlay {
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    padding: 20px;
+    background: #1423389c;
+    backdrop-filter: blur(5px);
+
+    .dialog {
+        display: flex;
+        width: min(100%, 480px);
+        flex-direction: column;
+        gap: 13px;
+        padding: 23px;
+        border: 1px solid #dfe4e7;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 25px 70px #0f1e2d45;
+
+        .dialogHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 3px; }
+        .dialogHeader p { color: #c25c40; font-size: 8px; font-weight: 800; letter-spacing: .15em; }
+        .dialogHeader h2,
+        > h2 { margin-top: 3px; color: #243448; font-size: 20px; font-weight: 760; letter-spacing: -.035em; }
+        .dialogHeader span,
+        > p { display: block; margin-top: 4px; color: #78848e; font-size: 10px; line-height: 1.55; }
+        .deleteIcon { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 10px; color: #ba5d48; background: #fbefeb; }
+
+        .closeButton { display: grid; width: 30px; height: 30px; place-items: center; border: 0; border-radius: 7px; color: #72808c; background: #f1f4f6; }
+
+        .formField {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            color: #516171;
+            font-size: 10px;
+            font-weight: 700;
+
+            > span { color: #87939d; font-size: 9px; font-weight: 450; }
+            input,
+            select,
+            textarea { width: 100%; min-height: 39px; padding: 8px 10px; border: 1px solid #dce2e7; border-radius: 8px; outline: none; color: #344557; background: #fff; font-size: 11px; font-weight: 450; }
+            textarea { min-height: 76px; line-height: 1.5; }
+            input::placeholder,
+            textarea::placeholder { color: #a1aab1; }
+            input:focus,
+            select:focus,
+            textarea:focus { border-color: #7896ac; box-shadow: 0 0 0 3px #678eac18; }
+        }
+
+        .fieldRow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+        .dialogActions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 3px;
+
+            button { min-height: 38px; padding: 0 12px; border: 1px solid #dce2e7; border-radius: 8px; color: #526171; background: #fff; font-size: 10px; font-weight: 700; }
+            .saveButton { border-color: #dc704f; color: #fff; background: #dc704f; }
+            .deleteButton { border-color: #b95b46; color: #fff; background: #b95b46; }
+            button:focus-visible { outline: 3px solid #a9c0d0; outline-offset: 2px; }
+        }
+
+        @media (max-width: 430px) { gap: 11px; padding: 17px; }
+    }
+}

@@ -1,0 +1,12 @@
+.itineraryBoard {
+    display: grid;
+    grid-template-columns: 225px minmax(0, 1fr) 254px;
+    align-items: start;
+    gap: 14px;
+
+    .summarySlot { min-width: 0; }
+
+    @media (max-width: 1050px) { grid-template-columns: 196px minmax(0, 1fr); .summarySlot { grid-column: 2; } }
+    @media (max-width: 760px) { grid-template-columns: minmax(0, 1fr); .summarySlot { grid-column: auto; } }
+    @media (max-width: 600px) { gap: 10px; }
+}
