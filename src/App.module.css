@@ -22,20 +22,49 @@
             display: grid;
             min-height: 510px;
             grid-template-columns: 245px minmax(0, 1fr) 280px;
+            align-items: start;
             gap: 14px;
 
-            .placeholderRail,
             .placeholderSchedule,
             .placeholderSummary { border: 1px solid #dce2e7; border-radius: 16px; background: #fff; }
-            .placeholderRail { display: flex; align-items: center; flex-direction: column; gap: 15px; padding: 22px 18px; color: #76828c; font-size: 11px; text-align: center; }
-            .placeholderRail span:first-child { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; color: #fff; background: #e67555; font-size: 12px; font-weight: 750; }
-            .placeholderSchedule { display: flex; flex-direction: column; gap: 15px; padding: 24px; }
-            .placeholderSchedule div { height: 72px; border: 1px solid #e5e9ec; border-radius: 11px; background: #f9fafb; }
-            .placeholderSchedule span { color: #798590; font-size: 12px; }
-            .placeholderSummary { display: flex; align-items: flex-start; flex-direction: column; gap: 11px; padding: 22px; }
-            .placeholderSummary span { color: #cf6244; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
-            .placeholderSummary strong { color: #233246; font-size: 17px; }
-            .placeholderSummary p { color: #77838c; font-size: 12px; }
+
+            .placeholderSchedule {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 22px;
+
+                h2 { margin-bottom: 4px; color: #243448; font-size: 20px; font-weight: 760; letter-spacing: -.04em; }
+
+                .previewStop {
+                    display: grid;
+                    grid-template-columns: 51px minmax(0, 1fr) 47px;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 12px 11px;
+                    border: 1px solid #e5e9ec;
+                    border-radius: 11px;
+                    background: #f9fafb;
+
+                    time { color: #bd553a; font-size: 10px; font-weight: 750; }
+                    div { display: flex; flex-direction: column; gap: 3px; }
+                    strong { color: #344353; font-size: 11px; font-weight: 700; }
+                    div span { color: #8a949c; font-size: 9px; }
+                    > span { color: #89939c; font-size: 9px; text-align: right; }
+                }
+            }
+
+            .placeholderSummary {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 11px;
+                padding: 22px;
+
+                > span { color: #cf6244; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
+                strong { color: #233246; font-size: 17px; }
+                p { color: #77838c; font-size: 12px; }
+            }
         }
 
         @media (max-width: 850px) {
@@ -53,7 +82,7 @@
             .intro { padding: 24px 0; }
             .intro > div { flex-wrap: wrap; font-size: 11px; }
             .plannerShell { grid-template-columns: minmax(0, 1fr); }
-            .placeholderRail { min-height: 72px; flex-direction: row; justify-content: flex-start; }
+            .plannerShell > div:first-child { min-height: 72px; }
             .placeholderSummary { grid-column: auto; }
         }
     }
